@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Atari Games Antigos</title>
+	
+</head>
+<body>
+    <header>
+        <h1>Atari 2600</h1>
+        <nav>
+            <ul>
+             <h3>Nostalgia Pura</h3>
+				
+                <!-- Adicione mais links conforme necessário -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="game-list"></div>
+        <div id="game-list"></div>
+	
+		<audio controls>
+<source src="Sound/Musica1.mp3" type="audio/mp3">
+Seu navegador é fraco!
+</audio>
+
+<br>
+
+<audio controls>
+<source src="Sound/musica2.mp3" type="audio/mp3">
+Seu navegador é fraco!
+</audio>
+
+    </main>
+	
+	<footer>
+        <p>&copy; Alex Games 2024. </p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <style>
+	
+	 audio {
+            display: inline-block;
+            margin-right: 10px;
+			}
+	
+        body {
+		
+		
+		    background-color: #c4dedf;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #800080;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        #game-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            width: 200px;
+            margin: 20px;
+            padding: 10px;
+            border: 5px solid #800080;
+            text-align: center;
+        }
+
+        .game-card a {
+            text-decoration: none; /* Remover sublinhado padrão dos links */
+        }
+
+        .game-card img {
+            max-width: 100%;
+            height: auto;
+        }
+		
+		
+		footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            center: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+		
+		
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gameListElement = document.getElementById('game-list');
+
+            // Exemplo de dados de jogos
+            const games = [
+                { title: 'Enduro', image: 'Imagens/Enduro.gif', link: 'https://www.retrogames.cz/play_028-Atari2600.php' },
+                { title: 'Frostbite', image: 'Imagens/Frostbite.gif', link: 'https://www.retrogames.cz/play_072-Atari2600.php' },
+                { title: 'Hero', image: 'Imagens/Hero.gif', link: 'https://www.retrogames.cz/play_228-Atari2600.php' },
+				{ title: 'River Raid', image: 'Imagens/River_Raid.gif', link: 'https://www.retrogames.cz/play_036-Atari2600.php' },
+				{ title: 'Bobby is Going Home', image: 'Imagens/Bobby_Is_Going_Home.gif', link: 'https://www.retrogames.cz/play_192-Atari2600.php' },
+				{ title: 'Megamania', image: 'Imagens/Megamania.gif', link: 'https://www.retrogames.cz/play_129-Atari2600.php' },
+				{ title: 'Missile Command', image: 'Imagens/Missile_Command.gif', link: 'https://www.retrogames.cz/play_080-Atari2600.php' },
+                // Adicione mais jogos conforme necessário
+            ];
+
+           // Renderizar lista de jogos
+            games.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+
+                const titleElement = document.createElement('h2');
+                titleElement.textContent = game.title;
+
+                const imageLink = document.createElement('a');
+                imageLink.href = game.link;
+
+                const imageElement = document.createElement('img');
+                imageElement.src = game.image;
+                imageElement.alt = game.title;
+
+                imageLink.appendChild(imageElement);
+
+                gameCard.appendChild(titleElement);
+                gameCard.appendChild(imageLink);
+
+                gameListElement.appendChild(gameCard);
+            });
+        });
+		
+    </script>
+</body>
+</html>
